@@ -1,0 +1,217 @@
+
+@font-face {
+    font-family: 'frauncesblack';
+    src: url('./project_font/fraunces-variablefont_softwonkopszwght-webfont.woff2') format('woff2'),
+    url('./project_font/fraunces-variablefont_softwonkopszwght-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    
+}
+
+@font-face {
+    font-family: 'montserratthin';
+    src: url('./project_font/montserrat-variablefont_wght-webfont.woff2') format('woff2'),
+    url('./project_font/montserrat-variablefont_wght-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    
+}
+
+:root {
+  --Very-dark-blue: hsl(212, 21%, 14%);
+  --Dark-grayish-blue: hsl(228, 12%, 48%);
+  --White: hsl(0, 0%, 100%);
+  --Dark-cyan: hsl(158, 36%, 37%);
+  --Cream: hsl(30, 38%, 92%);
+  --font-size: 14px;
+  
+}
+* {
+    box-sizing: border-box;
+}
+html {
+  font-size: var(--font-size);
+}
+
+body {
+    width: 90vw;
+    height: 100vh;
+    background-color: var(--Cream);
+    display: flex;
+}
+
+main {
+    margin: auto;
+    width: 90%;
+    /* height: 140vw; */
+    background-color: var(--White);
+    border-radius: .75em;
+}
+
+
+h1, p, .price-before {
+    font-family: montserratthin;
+    color: var(--Dark-grayish-blue);
+}
+
+h2 {
+    font-family: frauncesblack;
+    color: var(--Very-dark-blue);
+}
+
+.price-current {
+    font-family: frauncesblack;
+    color: var(--Dark-cyan);
+}
+
+.price-before {
+    text-decoration: line-through;
+}
+
+p {
+    font-weight: bolder;
+}
+
+
+    .button, .button:visited, .button:link {
+        color: var(--White);
+    }
+    
+@media (min-width: 375px) {
+
+    h1 {
+        font-size: var(--font-size);
+        letter-spacing: .25em;
+    }
+
+    main {
+        height: 140vw;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    body {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .img {
+        display: block;
+        width: 100%;
+        height: 60vw;
+        
+        /* padding: 40% 100%; */
+        background-image: url(./images/image-product-mobile.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        border-radius: .75em .75em 0em 0em;
+    }
+
+    p {
+        line-height: 1.25;
+        /* word-spacing: .125em; */
+    }
+    
+    h2 {
+        font-size: 2em;
+        margin: .5em 0em;
+    }
+    
+    .price-current {
+        font-size: 2.25em;
+        margin-right: .5vw;
+    }
+
+    .price-wrapper {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+    }
+    
+    .content {
+        width: 100%;
+        flex: 1;
+        padding-left: 1em;
+        padding-right: .75em;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between ;
+    }
+
+    .button {
+        font-weight: 600;
+        display: block;
+        background-color: var(--Dark-cyan);
+        text-decoration: none;
+        font-family: montserratthin;
+        padding: 1em 0em;
+        border-radius: .5em;
+        text-align: center;
+        margin: 2em 1.5em;
+        /* margin-bottom: 2em; */
+        justify-self:end;
+    }
+
+    .button:active {
+        background-color: hsl(156, 42%, 18%);
+    }
+
+    .button::before {
+        content: '';
+        padding: 1em;
+        background-image: url(./images/icon-cart.svg);
+        background-repeat: no-repeat;
+        background-position: center;
+        margin-right: .5em;
+
+    }
+    
+}
+
+@media (min-width: 850px) {
+    main {
+        width: 50%;
+        height: 60%;
+        flex-direction: row;
+    }
+
+    .img {
+        width: 50%;
+        height: auto;
+        background-image: url(./images/image-product-desktop.jpg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        border-radius: .5em 0em 0em .5em;
+    }
+    
+    .content {
+        width: 50%;
+        padding: 2.5vw;
+    }
+
+    h2 {
+        font-size: 2.5em;
+        margin: .5vw 0em;
+    }
+
+    p {
+        line-height: 1.5;
+        padding-right: 1vw;
+        margin: 2vw 0em;
+        margin-right: 1vw;
+    }
+
+    .price-current {
+        font-size: 2.5em;
+    }
+    
+    .button {
+        margin: 0em;
+        padding: 1.5vw 0em;
+    }
+}
